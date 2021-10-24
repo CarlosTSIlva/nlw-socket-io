@@ -17,7 +17,6 @@ export function ensureAuthenticated(
     }
 
     const [, token] = authToken.split(" ");
-
     const { sub } = verify(token, process.env.JWT_SECRET) as IPayload;
 
     req.user_id = sub;
