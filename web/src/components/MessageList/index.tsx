@@ -27,7 +27,7 @@ export function MessageList() {
         setMessages((prevState) =>
           [messagesQueue[0], prevState[0], prevState[1]].filter(Boolean)
         );
-        delete messagesQueue[0];
+        messagesQueue.shift();
       }
     }, 3000);
   }, []);
